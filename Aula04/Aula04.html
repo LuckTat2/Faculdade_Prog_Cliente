@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Aula 04</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1>Aula 04 - Formulário</h1>
+<form action="..." method="POST">
+    <p>
+        <label>Informe seu nome:</label><br>
+        <input placeholder="Digite..." type="text" required="required" name="nome"></input>
+    </p>    
+
+    <p>
+        <label>Digite sua mensagem:</label><br>
+        <textarea rows="10" cols="70" placeholder="Digite sua mensagem..." required="required" name="mensagem">Mensagem</textarea>
+    </p>
+
+    <p>
+        <label>Escolha sua cidade:</label><br>
+        <select name="cidade">
+            <option disabled selected>- Selecione -</option>
+            <option value="palhoca">Palhoça</option>
+            <option value="saojose">São José</option>
+            <option value="florianopolis">Florianópolis</option>
+            <option value="biguacu">Biguaçu</option>
+        </select>        
+    </p>
+
+    <p>
+        <label>Bairros que desejar pesquisar:</label><br>
+        <ul>
+            <li><input checked="checked" value="SIM "type="checkbox" name="ponteDoImaruim"> Ponte do Imaruim</input></li>
+            <li><input value="SIM "type="checkbox" name="centro"> Centro</input></li>
+            <li><input value="SIM "type="checkbox" name="pedraBranca"> Pedra Branca</input></li>
+            <li><input value="SIM "type="checkbox" name="pinheira"> Pinheira</input></li>
+        </ul>
+    </p>
+
+    <p>
+	<label>Digite a faixa do aluguel:</label><br>
+        <ul>
+            <li><input value="ate500" type="radio" name="valorAluguel"> até R$500</input></li>
+            <li><input value="500AMil" type="radio" name="valorAluguel"> R$501 à R$1000</input></li>
+            <li><input value="milADois" type="radio" name="valorAluguel"> R$1001 à R$2000</input></li>
+            <li><input value="doisATres" type="radio" name="valorAluguel"> R$2001 à R$3000</input></li>
+            <li><input value="acimaTres"type="radio" name="valorAluguel"> acima de R$3001</input></li>
+        </ul>
+    </p>
+
+    <p>
+        <input value="SIM "type="checkbox" name="termosDoContrato"> Eu aceito os termos de uso do site. </input>
+    </p>
+
+    <button type="submit">Enviar</button>
+</form>
+</body>
+</html>
