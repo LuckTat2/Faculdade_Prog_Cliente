@@ -1,0 +1,8 @@
+<script>
+    let v = 0
+    do{
+    v = prompt("Digite o número '1' para encerrar: ")
+    alert(v)
+    }
+    while(v != 1)
+    </script>
