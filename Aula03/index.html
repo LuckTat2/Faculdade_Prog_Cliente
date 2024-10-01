@@ -3,52 +3,25 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Currículo</title>
+    <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
 <body>
-    <div id="foto">
-        <img src="foto.jpg" width="200" height="250" alt="Uma foto para currículo.">
-    </div>
-
-    <div id="titulo">
-        <h1>Currículo</h1>
-    </div>
-
-    <div id="cabecalho">
-        <br><h2>José Martins</h2>
-        <h3>Desenvolvedor Front-End</h3>
-    </div>
-
-    <div id="sobre">
-        <br><h3>Sobre</h3>
-        <p>Desenvolvedor <b>Front-End</b> especializado em, <b>HTML, CSS</b>.</p>
-        <p>Aprendo rápido e busco oportunidades para me aprimorar e evoluir cada vez mais na área de tecnologia.</p>
-    </div>
-
-    <div id="contato">
-        <br><h3>Contato</h3>
-        <ul>
-            <li>Telefone: 48984552714</li>
-            <li>E-mail: josémart@gmail.com</li>
-            <li>Linkedin: <a target="_blank" href="https://br.linkedin.com/in/jmfnrj">José Martins</a></li>
-        </ul>
-    </div>
-
-    <div id="formacao">
-        <br><h3>Formação</h3>
-        <ol>
-            <li>Técnologo em Análise e Desenvolvimento de Sistemas - Faculdade Municipal de Palhoça</li>
-            <li>Conceitos de Programação Front-End - Udemy</li>
-            <li>Inglês Avançado - inFlux</li>
-        </ol>
-    </div>
-
-    <div id="video">
-        <br><h4>Criação de um projeto Front-End</h4>
-        <iframe width="270" height="180" src="https://www.youtube.com/embed/i6t2jaRxos4?si=gNgq7_hHR008TTRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
+    <h1>Aula 3 - Formulário</h1>
+    <br>
+    <form action="https://formspree.io/f/mnnazgqk" method="post">
+        <label for="nome">Informe seu nome: </label>
+        <input placeholder="Digite seu nome..." required="required" type="text" value="José" name="nome" id="nome"></input>
+        <br>
+        <br>
+        <br><label for="comentario">Digite um comentário: </label>
+        <br>
+        <br><textarea placeholder="Digite um comentário..." required="required" name="comentario" id="comentario" rows="3" cols="30"></textarea>
+        <br>
+        <br>
+        <br><button type="submit">Enviar</button>
+    </form>
 </body>
 </html>

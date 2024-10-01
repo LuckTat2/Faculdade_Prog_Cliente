@@ -1,0 +1,79 @@
+body {
+    margin-left: 15%;
+    margin-right: 15%;
+}     
+.forma {
+    display: grid;
+    grid-auto-flow: column;
+} 
+#cabecalho {
+    font-weight: lighter; /*Negrito*/ 
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-decoration-line: underline;
+}
+#menu li {
+    display: inline-block; /*menu em linha*/
+    margin-left: 20px;
+    font-size: 15px;
+}
+#menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#menu {
+    text-align: right;
+    margin-top: 50px;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+#destaque h1 {
+   font-size: 35px;
+}
+#destaque p {
+   font-style: italic;
+   font-size: 15px;
+   line-height: 30px; /*Espaço entre linhas*/
+}
+#imagemDestaque {
+    margin-left: 55px;
+}
+#imagemDestaque img {
+    width: 100%;
+}
+.img {
+    text-align: center; /*funciona com imagens*/
+}
+#divImagens {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#div4 h2 {
+    font-size: 20px;
+    text-align: center;
+    color: blue;
+}
+#div4 h1 {
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 0;
+}
+.alinhamentoCentral {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#imagemDestaque img,
+#divImagens .img img {
+    width: 150px; 
+    height: auto; 
+}
+.alinhamentoCentral img {
+    width: 50px; 
+    height: auto; 
+}
