@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Aula 09_2</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        #aula09 {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="aula09" onclick="Clicar()" onmouseenter="Entrar()" onmouseout="Sair()">
+        Botão
+    </div>
+    <script>
+        function Clicar(){
+            // Alterar cor da DIV
+
+            //var corDiv = document.getElementById("aula09")
+            //corDiv.style.background="red"
+            //document.getElementById("aula09").style.background="red"
+            aula09.style.background="red"
+
+
+            // Alterar descrição da DIV
+            //var descricaoDiv = document.getElementById("aula09")
+            //descricaoDiv.innerText = "Clicou!"
+            //document.getElementById("aula09").innerText="Clicou!"
+            aula09.innerText="Clicou!"
+
+            //Alterar cor do texto da DIV
+            aula09.style.color="white"
+        }
+
+        function Entrar(){
+            //Alterar a cor da DIV
+            aula09.style.background="yellow"
+
+            //Alterar descrição da DIV
+            aula09.innerText="Entrou!"
+
+             //Alterar cor do texto da DIV
+             aula09.style.color="black"
+        }
+
+        function Sair(){
+            //Alterar a cor da DIV
+            aula09.style.background="green"
+
+            //Alterar descrição da DIV
+            aula09.innerText="Saiu!"
+
+            //Alterar cor do texto da DIV
+            aula09.style.color="white"
+        }
+    </script>
+</body>
+</html>

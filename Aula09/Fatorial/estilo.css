@@ -1,0 +1,46 @@
+body {
+    padding-top: 12px;
+    display: flex; /* Adicionado */
+    flex-direction: column; /* Alinha os itens em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    height: 100%;
+}
+
+#corpo {
+    background-color: rgb(202, 199, 199);
+    width: 350px;
+    height: 130px;
+    border-radius: 8px;
+}
+
+#titulo {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100px;
+}
+
+#conteudo {
+    display: flex; /* Adicionado */
+    flex-direction: column; /* Alinha os itens em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    height: 100%;
+}
+
+#calcular {
+    background-color: rgb(61, 59, 59);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    width: 150px;
+}
+
+#numero {
+    margin-top: -10px;
+    border-radius: 8px;
+    width: 250px;
+}
