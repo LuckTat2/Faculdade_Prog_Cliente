@@ -75,6 +75,26 @@ class Aluno {
         celulaNome.textContent = aluno.nomeAluno
         celulaMedia.textContent = aluno.mediaAluno
     }
+
+    /*Listar(){
+        let tbody = document.getElementById('tbody')
+        tbody.innerText = ''
+        //Percorrer o Array
+        for(let i = 0; i < this.arrayAlunos.length; i++){
+            let trow = tbody.insertRow(); //Função que permite inserir uma nova linha
+
+            let td_id = trow.insertCell();
+            let td_nome = trow.insertCell();
+            let td_media = trow.insertCell();
+            let td_remover = trow.insertCell();
+
+            td_id.innerText = this.arrayAlunos[i].id;
+            td_nome.innerText = this.arrayAlunos[i].nomeAluno;
+            td_media.innerText = this.arrayAlunos[i].mediaAluno;
+            let bt_remover = document.createElement("button");
+
+        }
+    }*/
 }
 
 var aluno = new Aluno();
