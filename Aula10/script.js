@@ -76,7 +76,7 @@ class Aluno {
         celulaMedia.textContent = aluno.mediaAluno
     }
 
-    /*Listar(){
+    Listar(){
         let tbody = document.getElementById('tbody')
         tbody.innerText = ''
 
@@ -95,8 +95,15 @@ class Aluno {
             let bt_remover = document.createElement("button");
             bt_remover.textContent = "Remover";
             //bt_remover.setAttribute("onclick", "aluno.Remover("+this.arrayAluno[i].id+")")
+
+            //Atribuindo o evento de clique ao botão, chamando a função Remover
+            bt_remover.onclick = () => {
+                aluno.Remover(this.arrayAlunos[i].id); //Passando o ID do aluno ao clicar
+            };
+
+            td_remover.appendChild(bt_remover);
         }
-    }*/
+    }
 }
 
 var aluno = new Aluno();
