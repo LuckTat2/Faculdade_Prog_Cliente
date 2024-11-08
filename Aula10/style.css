@@ -1,0 +1,12 @@
+.aluno {
+    border-radius: 10px;
+    background-color: rgb(200, 238, 238);
+}
+
+.inputAluno input{
+    border-radius: 5px;
+}
+
+.aluno button{
+    border-radius: 17px;
+}
