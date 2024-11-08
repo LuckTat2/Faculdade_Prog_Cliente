@@ -104,6 +104,17 @@ class Aluno {
             td_remover.appendChild(bt_remover);
         }
     }
+
+    Remover(id){
+        let tbody = documnet.getElementById('tbody')
+
+        for(let i = 0; i < this.arrayAlunos.length; i++){
+            //Percore aluno a aluno do arrayAluno até encontrar o id do parâmetro
+            if(this.arrayAlunos[i].id == id){
+                //Apagar da memória conforme o index
+            }
+        }
+    }
 }
 
 var aluno = new Aluno();
