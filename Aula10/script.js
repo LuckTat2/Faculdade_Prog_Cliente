@@ -79,6 +79,7 @@ class Aluno {
     /*Listar(){
         let tbody = document.getElementById('tbody')
         tbody.innerText = ''
+
         //Percorrer o Array
         for(let i = 0; i < this.arrayAlunos.length; i++){
             let trow = tbody.insertRow(); //Função que permite inserir uma nova linha
@@ -92,7 +93,8 @@ class Aluno {
             td_nome.innerText = this.arrayAlunos[i].nomeAluno;
             td_media.innerText = this.arrayAlunos[i].mediaAluno;
             let bt_remover = document.createElement("button");
-
+            bt_remover.textContent = "Remover";
+            //bt_remover.setAttribute("onclick", "aluno.Remover("+this.arrayAluno[i].id+")")
         }
     }*/
 }
