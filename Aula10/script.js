@@ -13,14 +13,15 @@ class Aluno {
         if(validado == true){
             console.log("Aqui!")
         }*/
-
         if(this.Validar(aluno) == true){
 
-        //3º Salvar os dados
-        //this.Salvar(aluno)
-        this.AdicionarNaTabela(aluno)
-        this.id++
+            //3º Salvar os dados
+            //this.Salvar(aluno)
+            this.AdicionarNaTabela(aluno)
+            this.id++
         }
+        //Conferir se os alunos são adicionados ao array
+        console.log(this.arrayAlunos)
     }
 
     //Ler as informações e colocá-las dentro de um objeto
