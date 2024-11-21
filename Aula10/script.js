@@ -1,119 +1,80 @@
 class Aluno {
-    constructor(){
-        this.id = 1
-        this.arrayAlunos = []
+    constructor() {
+        this.id = 1;
+        this.arrayAlunos = [];
     }
 
-    Adicionar(){
-        //1º Ler os dados
-        let aluno = this.LerDados()
+    Adicionar() {
+        let aluno = this.LerDados();
 
-        //2º Validar os dados
-        /*let validado = this.Validar(aluno)
-        if(validado == true){
-            console.log("Aqui!")
-        }*/
-        if(this.Validar(aluno) == true){
-
-            //3º Salvar os dados
-            //this.Salvar(aluno)
-            this.AdicionarNaTabela(aluno)
-            this.id++
-        }
-        //Conferir se os alunos são adicionados ao array
-        console.log(this.arrayAlunos)
-    }
-
-    //Ler as informações e colocá-las dentro de um objeto
-    LerDados(){
-        let aluno = {}
-
-        aluno.id = this.id
-        aluno.nomeAluno = document.getElementById('nome').value
-        aluno.mediaAluno = document.getElementById('media').value
-
-        //console.log(aluno)
-
-        return aluno
-    }
-
-    //Validar os dados
-    Validar(aluno){
-        let msg=''
-
-        if(aluno.nomeAluno == ''){
-            msg = msg + 'Informe o nome do aluno \n'
-        }
-        if(aluno.mediaAluno == ''){
-            msg += 'Informe a média final do aluno \n'
-        }
-        if(msg != ''){
-            alert(msg)
-            return false
+        if (this.Validar(aluno)) {
+            aluno.mediaAluno = this.CalcularMedia(aluno);
+            this.arrayAlunos.push(aluno);
+            this.AdicionarNaTabela(aluno);
+            this.id++;
         }
 
-        return true
+        console.log(this.arrayAlunos);
     }
 
-    Salvar(aluno){
-        this.arrayAlunos.push(aluno)
-        this.id++
+    LerDados() {
+        return {
+            id: this.id,
+            nomeAluno: document.getElementById('nome').value,
+            av1: parseFloat(document.getElementById('av1').value) || 0,
+            av2: parseFloat(document.getElementById('av2').value) || 0,
+            av3: parseFloat(document.getElementById('av3').value) || 0,
+        };
     }
 
-    AdicionarNaTabela(aluno){
-        let tbody = document.querySelector('tbody')
+    Validar(aluno) {
+        let msg = '';
 
-        //Cria uma nova linha na Tabela
-        let novaLinha = tbody.insertRow()
+        if (aluno.nomeAluno === '') msg += 'Informe o nome do aluno \n';
+        if (aluno.av1 < 0 || aluno.av1 > 10) msg += 'Informe uma nota válida para a Avaliação 1 \n';
+        if (aluno.av2 < 0 || aluno.av2 > 10) msg += 'Informe uma nota válida para a Avaliação 2 \n';
+        if (aluno.av3 < 0 || aluno.av3 > 10) msg += 'Informe uma nota válida para a Avaliação 3 \n';
 
-        //Adiciona as células com os dados do aluno
-        let celulaId = novaLinha.insertCell(0)
-        let celulaNome = novaLinha.insertCell(1)
-        let celulaMedia = novaLinha.insertCell(2)
-
-        celulaId.textContent = aluno.id
-        celulaNome.textContent = aluno.nomeAluno
-        celulaMedia.textContent = aluno.mediaAluno
-    }
-
-    Listar(){
-        let tbody = document.getElementById('tbody')
-        tbody.innerText = ''
-
-        //Percorrer o Array
-        for(let i = 0; i < this.arrayAlunos.length; i++){
-            let trow = tbody.insertRow(); //Função que permite inserir uma nova linha
-
-            let td_id = trow.insertCell();
-            let td_nome = trow.insertCell();
-            let td_media = trow.insertCell();
-            let td_remover = trow.insertCell();
-
-            td_id.innerText = this.arrayAlunos[i].id;
-            td_nome.innerText = this.arrayAlunos[i].nomeAluno;
-            td_media.innerText = this.arrayAlunos[i].mediaAluno;
-            let bt_remover = document.createElement("button");
-            bt_remover.textContent = "Remover";
-            //bt_remover.setAttribute("onclick", "aluno.Remover("+this.arrayAluno[i].id+")")
-
-            //Atribuindo o evento de clique ao botão, chamando a função Remover
-            bt_remover.onclick = () => {
-                aluno.Remover(this.arrayAlunos[i].id); //Passando o ID do aluno ao clicar
-            };
-
-            td_remover.appendChild(bt_remover);
+        if (msg) {
+            alert(msg);
+            return false;
         }
+        return true;
     }
 
-    Remover(id){
-        let tbody = documnet.getElementById('tbody')
+    CalcularMedia(aluno) {
+        return ((2 * aluno.av1) + (2 * aluno.av2) + aluno.av3) / 5;
+    }
 
-        for(let i = 0; i < this.arrayAlunos.length; i++){
-            //Percore aluno a aluno do arrayAluno até encontrar o id do parâmetro
-            if(this.arrayAlunos[i].id == id){
-                //Apagar da memória conforme o index
-            }
-        }
+    AdicionarNaTabela(aluno) {
+        let tbody = document.querySelector('tbody');
+        let novaLinha = tbody.insertRow();
+
+        novaLinha.insertCell(0).textContent = aluno.id;
+        novaLinha.insertCell(1).textContent = aluno.nomeAluno;
+        novaLinha.insertCell(2).textContent = aluno.mediaAluno.toFixed(2);
+
+        let celulaRemover = novaLinha.insertCell(3);
+        let btnRemover = document.createElement('button');
+        btnRemover.textContent = 'Remover';
+        btnRemover.onclick = () => this.Remover(aluno.id);
+        celulaRemover.appendChild(btnRemover);
+    }
+
+    Remover(id) {
+        this.arrayAlunos = this.arrayAlunos.filter(aluno => aluno.id !== id);
+
+        let tbody = document.querySelector('tbody');
+        tbody.innerHTML = '';
+
+        this.arrayAlunos.forEach(aluno => this.AdicionarNaTabela(aluno));
+    }
+
+    Cancelar() {
+        document.getElementById('nome').value = '';
+        document.getElementById('av1').value = '';
+        document.getElementById('av2').value = '';
+        document.getElementById('av3').value = '';
     }
 }
 

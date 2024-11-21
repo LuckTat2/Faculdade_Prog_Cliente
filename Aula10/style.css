@@ -1,12 +1,151 @@
+/* Estilização do corpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Estilização do cabeçalho */
+header {
+    background-color: #008080;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Estilização principal */
+main {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Seção de Alunos */
 .aluno {
     border-radius: 10px;
     background-color: rgb(200, 238, 238);
+    padding: 15px;
+    margin-bottom: 20px;
 }
 
-.inputAluno input{
+.inputAluno {
+    margin-bottom: 15px;
+}
+
+.inputAluno label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.inputAluno input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
-.aluno button{
+/* Botões */
+.aluno button {
+    background-color: #008080;
+    color: white;
+    border: none;
     border-radius: 17px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.aluno button:hover {
+    background-color: #005757;
+}
+
+.aluno button:last-child {
+    background-color: #d9534f;
+}
+
+.aluno button:last-child:hover {
+    background-color: #c9302c;
+}
+
+/* Estilização da Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #008080;
+    color: white;
+    text-align: center;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tbody tr:hover {
+    background-color: #e0f7f7;
+}
+
+table tbody td {
+    text-align: center;
+}
+
+table button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+table button:hover {
+    background-color: #c9302c;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .aluno button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
 }

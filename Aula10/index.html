@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Aula 10</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,34 +23,38 @@
             </div>
 
             <div class="inputAluno">
-                <label>Média Final</label><br>
-                <input type="text" id="media" placeholder="Informe a média do aluno...">
+                <label>Nota da Avaliação 1</label><br>
+                <input type="number" id="av1" placeholder="Informe a nota da Av1..." min="0" max="10">
+            </div>
+
+            <div class="inputAluno">
+                <label>Nota da Avaliação 2</label><br>
+                <input type="number" id="av2" placeholder="Informe a nota da Av2..." min="0" max="10">
+            </div>
+
+            <div class="inputAluno">
+                <label>Nota da Avaliação 3</label><br>
+                <input type="number" id="av3" placeholder="Informe a nota da Av3..." min="0" max="10">
             </div>
 
             <button onclick="aluno.Adicionar()">Adicionar</button>
-            <button>Cancelar</button>
+            <button onclick="aluno.Cancelar()">Cancelar</button>
         </div>
 
         <div class="conteudo">
             <table border="1">
-                <thead> <!--Cabeçalho da Tabela-->
+                <thead>
                     <th>ID</th>
                     <th>Nome</th>
-                    <th>Média</th>
+                    <th>Média Final</th>
                     <th>Remover</th>
                 </thead>
-
-                <tbody> <!--Conteúdo apresentado na Tabela-->
-                    <!--<td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>-->
+                <tbody>
+                    <!-- Alunos serão adicionados aqui dinamicamente -->
                 </tbody>
             </table>
         </div>
     </main>
-    <script src="script.js">
-
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
