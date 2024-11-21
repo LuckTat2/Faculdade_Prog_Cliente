@@ -29,18 +29,42 @@ class Aluno {
 
     Validar(aluno) {
         let msg = '';
-
-        if (aluno.nomeAluno === '') msg += 'Informe o nome do aluno \n';
-        if (aluno.av1 < 0 || aluno.av1 > 10) msg += 'Informe uma nota válida para a Avaliação 1 \n';
-        if (aluno.av2 < 0 || aluno.av2 > 10) msg += 'Informe uma nota válida para a Avaliação 2 \n';
-        if (aluno.av3 < 0 || aluno.av3 > 10) msg += 'Informe uma nota válida para a Avaliação 3 \n';
-
-        if (msg) {
+    
+        // Verifica se o nome foi preenchido
+        if (aluno.nomeAluno.trim() === '') {
+            msg += 'Informe o nome do aluno.\n';
+        }
+    
+        // Verifica se as notas foram preenchidas
+        if (isNaN(aluno.av1) || aluno.av1 === 0) {
+            msg += 'Informe uma nota válida para a Avaliação 1.\n';
+        }
+        if (isNaN(aluno.av2) || aluno.av2 === 0) {
+            msg += 'Informe uma nota válida para a Avaliação 2.\n';
+        }
+        if (isNaN(aluno.av3) || aluno.av3 === 0) {
+            msg += 'Informe uma nota válida para a Avaliação 3.\n';
+        }
+    
+        // Verifica se as notas estão dentro do intervalo permitido
+        if (aluno.av1 < 0 || aluno.av1 > 10) {
+            msg += 'A nota da Avaliação 1 deve estar entre 0 e 10.\n';
+        }
+        if (aluno.av2 < 0 || aluno.av2 > 10) {
+            msg += 'A nota da Avaliação 2 deve estar entre 0 e 10.\n';
+        }
+        if (aluno.av3 < 0 || aluno.av3 > 10) {
+            msg += 'A nota da Avaliação 3 deve estar entre 0 e 10.\n';
+        }
+    
+        // Se houver mensagens de erro, exibe o popup
+        if (msg !== '') {
             alert(msg);
             return false;
         }
+    
         return true;
-    }
+    }    
 
     CalcularMedia(aluno) {
         return ((2 * aluno.av1) + (2 * aluno.av2) + aluno.av3) / 5;
